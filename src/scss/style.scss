@@ -1,0 +1,87 @@
+@import '_nullstyle.scss';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+body {
+	font-family: 'Rubik', sans-serif;
+}
+
+.container {
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	&__container {
+		margin-bottom: clamp(1.875rem, 1.515rem + 1.8vw, 3.125rem);
+		padding-top: clamp(1.25rem, 0.709rem + 2.7vw, 3.125rem);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
+
+	&__title {
+		font-size: 30px;
+		font-weight: 500;
+	}
+}
+
+.hero {
+	&__panel {
+		margin-bottom: 20px;
+		height: 40px;
+		display: grid;
+		grid-template: 1fr / minmax(220px, 1fr) minmax(70px, 100px);
+		& input,
+		button {
+			font-size: 20px;
+			border: 1px solid #555;
+			--radius: 30px;
+			--panel-color: #321bcc;
+		}
+		& input {
+			padding: 0 10px 0 20px;
+			border-bottom-left-radius: var(--radius);
+			border-top-left-radius: var(--radius);
+			border-right: none;
+			transition: box-shadow 0.4s ease-in-out;
+			&:focus {
+				box-shadow: 2px 3px 7px var(--panel-color);
+			}
+		}
+		& button {
+			border-bottom-right-radius: var(--radius);
+			border-top-right-radius: var(--radius);
+			color: #fff;
+			background-color: var(--panel-color);
+			&:disabled {
+				background-color: #555;
+			}
+		}
+	}
+
+	&__quantity {
+		margin-bottom: 20px;
+	}
+	&__card {
+		margin-bottom: 30px;
+	}
+}
+.card {
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	&__link {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+
+	&__description {
+		font-weight: 300;
+		font-size: 14px;
+	}
+}
