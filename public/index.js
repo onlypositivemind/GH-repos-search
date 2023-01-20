@@ -113,7 +113,6 @@ var onSubmit = function () { return __awaiter(void 0, void 0, void 0, function (
                 return [4 /*yield*/, getData(API_URL + search)];
             case 1:
                 _a = _b.sent(), total_count = _a.total_count, items = _a.items;
-                console.log(items);
                 renderCount(total_count);
                 items && template(items);
                 _b.label = 2;

@@ -93,7 +93,6 @@ const onSubmit = async () => {
 		onSubmitStart();
 		
 		const { total_count, items } = await getData(API_URL + search);
-		console.log(items);
 		renderCount(total_count);
 		items && template(items);
 	}
