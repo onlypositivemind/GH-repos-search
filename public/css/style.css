@@ -88,6 +88,13 @@ h6 {
   font-weight: 400;
 }
 
+:root {
+  --white: #fff;
+  --grey: #555;
+  --light-grey: #eee;
+  --panel-color: #321bcc;
+}
+
 body {
   font-family: "Rubik", sans-serif;
 }
@@ -111,6 +118,9 @@ body {
   font-weight: 500;
 }
 
+.hero {
+  padding-bottom: 15px;
+}
 .hero__panel {
   margin-bottom: 20px;
   height: 40px;
@@ -120,9 +130,8 @@ body {
 .hero__panel input,
 .hero__panel button {
   font-size: 20px;
-  border: 1px solid #555;
+  border: 1px solid var(--grey);
   --radius: 30px;
-  --panel-color: #321bcc;
 }
 .hero__panel input {
   padding: 0 10px 0 20px;
@@ -137,11 +146,11 @@ body {
 .hero__panel button {
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  color: #fff;
+  color: var(--white);
   background-color: var(--panel-color);
 }
 .hero__panel button:disabled {
-  background-color: #555;
+  background-color: var(--grey);
 }
 .hero__quantity {
   margin-bottom: 20px;
@@ -152,7 +161,7 @@ body {
 
 .card {
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--light-grey);
   display: flex;
   align-items: center;
   gap: 15px;
@@ -164,6 +173,29 @@ body {
 .card__description {
   font-weight: 300;
   font-size: 14px;
+}
+
+.loader {
+  position: fixed;
+  bottom: 10px;
+  right: calc(50% - 37.5px);
+  margin: 0 auto;
+  width: 75px;
+  height: 75px;
+  border: 10px solid var(--light-grey);
+  border-radius: 50%;
+  border-left-color: var(--panel-color);
+  animation: spin 1.3s linear infinite;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
